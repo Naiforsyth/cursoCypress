@@ -1,5 +1,18 @@
 {
   "devDependencies": {
-    "cypress": "^15.5.0"
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1",
+    "cypress": "^15.5.0",
+    "rimraf": "^6.1.0"
+  },
+  "dependencies": {
+    "@mmisty/cypress-allure-adapter": "^3.3.2"
+  },
+  "scripts": {
+    "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
+    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "allure:generate": "allure generate allure-results --clean || true",
+    "allure:open": "allure open",
+    "test":"npm run limpiar-reporte && npm run ejecutar-pruebas && npm run allure:generate && npm run allure:open"
   }
 }
