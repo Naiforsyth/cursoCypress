@@ -13,6 +13,6 @@
     "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
     "allure:generate": "allure generate allure-results --clean || true",
     "allure:open": "allure open",
-    "test":"npm run limpiar-reporte && npm run ejecutar-pruebas && npm run allure:generate && npm run allure:open"
+    "test":"npm run limpiar-reporte && npm run ejecutar-pruebas & npm run allure:generate && npm run allure:open"
   }
 }

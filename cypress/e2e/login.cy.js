@@ -5,6 +5,7 @@ describe('Login', () => {
         cy.visit('https://demoblaze.com/')
         cy.get('a#login2').click()
         loginMethods.login('username', 'password')
+        cy.get('a#nameofuser').should('contain.text', 'username')
         cy.wait(5000)
     });
 });
