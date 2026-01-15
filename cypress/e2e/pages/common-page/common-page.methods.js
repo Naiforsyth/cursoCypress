@@ -3,26 +3,32 @@ import { CommonPageElements } from "./common-page.elements";
 
 export class CommonPageMethods {
   static navigateToDemoBlaze() {
+    cy.clearCookies();
     cy.visit(commonPageData.url());
   }
 
   static clickOnHomeOption() {
     CommonPageElements.topMenu.home.click();
   }
-   static clickOnContactOption() {
+  static clickOnContactOption() {
     CommonPageElements.topMenu.contact.click();
   }
-   static clickOnAboutUsOption() {
+  static clickOnAboutUsOption() {
     CommonPageElements.topMenu.aboutUs.click();
   }
-   static clickOnCartOption() {
+  static clickOnCartOption() {
     CommonPageElements.topMenu.cart.click();
   }
-   static clickOnLoginOption() {
+  static clickOnLoginOption() {
     CommonPageElements.topMenu.login.click();
   }
-   static clickOnSingUpOption() {
+  static clickOnSingUpOption() {
     CommonPageElements.topMenu.singUp.click();
   }
+
+  static verifyAlert(expectedMessage) {
+    cy.on("window:alert", (str) => {
+      expect(str).to.equal(expectedMessage);
+    });
+  }
 }
- 

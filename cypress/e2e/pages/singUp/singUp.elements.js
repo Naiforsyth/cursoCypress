@@ -1,4 +1,4 @@
-export class SignupElements {
+export class SignUpElements {
   static get textboxes() {
     return {
       get username() {
