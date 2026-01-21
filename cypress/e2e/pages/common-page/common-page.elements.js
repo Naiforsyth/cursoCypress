@@ -14,11 +14,15 @@ export class CommonPageElements {
         return cy.contains("a", "Cart");
       },
       get login() {
-        return cy.contains("a", "Login");
+        return cy.contains("a", "Log in");
       },
       get singUp() {
         return cy.contains("a", "Sign up");
       },
     };
+  }
+
+  static get signedUser(){
+    return cy.get("a#nameofuser");
   }
 }

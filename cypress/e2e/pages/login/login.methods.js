@@ -1,7 +1,7 @@
 import { loginElements } from "./login.elements"
 import { Logger } from "../../util/logger";
 
-export class loginMethods{
+export class LoginMethods{
     static insertUsername(username){
         loginElements.textboxes.username.invoke('val', username)
     }
