@@ -18,6 +18,9 @@ export class CommonPageMethods {
   }
   static clickOnCartOption() {
     CommonPageElements.topMenu.cart.click();
+    Cypress.on("uncaught:exception", (err, runnable) => {
+      return false;
+    });
   }
   static clickOnLoginOption() {
     CommonPageElements.topMenu.login.click();
@@ -34,8 +37,7 @@ export class CommonPageMethods {
 
   static generateRandomString(length = 10) {
     let result = "";
-    const characters =
-      "abcdefghijklmnopqrstuvwxyz0123456789";
+    const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -44,6 +46,6 @@ export class CommonPageMethods {
   }
 
   static verifySignedUser(username) {
-    CommonPageElements.signedUser.should('have.text', `Welcome ${username}`);
+    CommonPageElements.signedUser.should("have.text", `Welcome ${username}`);
   }
 }

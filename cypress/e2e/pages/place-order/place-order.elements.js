@@ -11,7 +11,7 @@ export class PlaceOrderElements {
         return cy.get("input#city");
       },
       get creditCard() {
-        return cy.get("input#creditCard");
+        return cy.get("input#card");
       },
       get month() {
         return cy.get("input#month");
@@ -28,7 +28,7 @@ export class PlaceOrderElements {
         return cy.get('div[id="orderModal"] button').eq(1);
       },
       get purchase() {
-        return cy.get("button", "Purchase");
+        return cy.contains('button', 'Purchase');
       },
     };
   }
