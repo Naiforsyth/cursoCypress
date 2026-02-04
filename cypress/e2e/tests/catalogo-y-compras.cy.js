@@ -50,7 +50,7 @@ describe(commonPageData.testSuites.catalogoYCompras, () => {
     Logger.subStep('Click on "Log in" link');
     CommonPageMethods.clickOnLoginOption();
     LoginMethods.login(user.username, user.password);
-    cy.wait(5000);
+    
 
     Logger.stepNumber(2);
     Logger.step("Navegar a la página de Inicio");
@@ -157,7 +157,6 @@ describe(commonPageData.testSuites.catalogoYCompras, () => {
       "Verificar que se muestra un mensaje de confirmación y se redirige al usuario a la página de inicio",
     );
     ThankYouForYourPurchaseMethods.verifyGreenCheckMarkIsDisplayed();
-    cy.wait(3000);
     ThankYouForYourPurchaseMethods.clickOkButton();
     HomeMethods.verifyHomePageIsShown();
 
