@@ -3,6 +3,7 @@
     "@shelex/cypress-allure-plugin": "^2.41.2",
     "allure-commandline": "^2.34.1",
     "cypress": "^15.5.0",
+    "cypress-parallel": "^0.15.0",
     "rimraf": "^6.1.0"
   },
   "dependencies": {
@@ -13,6 +14,7 @@
     "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
     "allure:generate": "allure generate allure-results --clean || true",
     "allure:open": "allure open",
-    "test":"npm run limpiar-reporte && npm run ejecutar-pruebas & npm run allure:generate && npm run allure:open"
+    "test": "npm run limpiar-reporte && npm run ejecutar-pruebas && npm run allure:generate && npm run allure:open",
+    "cy:parallel" : "npm run limpiar-reporte && cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/tests ; npm run allure:generate"
   }
 }
