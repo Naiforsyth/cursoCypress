@@ -11,10 +11,10 @@
   },
   "scripts": {
     "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
-    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "ejecutar-pruebas": "npx cypress run --env allure=true",
     "allure:generate": "allure generate allure-results --clean || true",
     "allure:open": "allure open",
     "test": "npm run limpiar-reporte && npm run ejecutar-pruebas && npm run allure:generate && npm run allure:open",
-    "cy:parallel" : "npm run limpiar-reporte && cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/tests & npm run allure:generate"
+    "cy:parallel" : "npm run limpiar-reporte && cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/tests"
   }
 }
